@@ -1,5 +1,6 @@
 # Inverted-Index-Generator
 An Inverted Index generator implemented in Go
+Go 语言实现倒排索引
 
 An inverted index is used to quickly do text searches in a lot of documents. 
 It is done in Full Text Search Engines such as ElasticSearch. It does so by creating a table of each word, its frequency and all the documents it has appeared in.
