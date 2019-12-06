@@ -13,7 +13,7 @@ type InvertedIndexItem struct {
 // term is present and an array of InvertedIndexItem
 type InvertedIndex struct {
 	HashMap map[string]*InvertedIndexItem
-	Items   []InvertedIndexItem
+	Items   []*InvertedIndexItem
 }
 
 // FindItem returns the position of a given
@@ -50,7 +50,7 @@ func (invertedIndex *InvertedIndex) AddItem(Term string, Document int) {
 		}
 
 		invertedIndex.HashMap[Term] = invertedIndexItem
-		invertedIndex.Items = append(invertedIndex.Items, *invertedIndexItem)
+		invertedIndex.Items = append(invertedIndex.Items, invertedIndexItem)
 	}
 }
 
@@ -59,7 +59,7 @@ func (invertedIndex *InvertedIndex) AddItem(Term string, Document int) {
 func CreateInvertedIndex() *InvertedIndex {
 	invertedIndex := &InvertedIndex{
 		HashMap: make(map[string]*InvertedIndexItem),
-		Items:   []InvertedIndexItem{},
+		Items:   []*InvertedIndexItem{},
 	}
 	return invertedIndex
 }
